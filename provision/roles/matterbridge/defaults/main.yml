@@ -8,10 +8,18 @@ matterbridge_filename: "matterbridge-linux-arm"
 matterbridge_sha256: "9a9f3fc77e50aebe4678e2cd35bc13798afc4867e8e2491444359ba20c94b1e8"
 
 matterbridge_nick: "matterbridge"
-matterbridge_gateway_name: "test-gateway"
-matterbridge_freenode_channel: "#matterbridge-test"
-matterbridge_ircnet_channel: "#matterbridge-test:*.jp"
-matterbridge_toml_more_servers: ""
-matterbridge_toml_general: |
+matterbridge_toml: |
+  [general]
   RemoteNickFormat="[{PROTOCOL}/{BRIDGE}] <{NICK}> "
-matterbridge_toml_more: ""
+
+  [[gateway]]
+  name="nadoka-gateway"
+  enable=true
+
+  [[gateway.inout]]
+  account="irc.freenode"
+  channel="#nadoka_jp"
+
+  [[gateway.inout]]
+  account="irc.ircnet"
+  channel="#nadoka:*.jp"

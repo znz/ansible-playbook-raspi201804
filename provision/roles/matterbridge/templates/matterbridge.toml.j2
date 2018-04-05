@@ -14,21 +14,4 @@ Charset=""
 Nick="{{ matterbridge_nick }}"
 RemoteNickFormat="<{NICK}> "
 
-{{ matterbridge_toml_more_servers }}
-
-[general]
-{{ matterbridge_toml_general }}
-
-[[gateway]]
-name="{{ matterbridge_gateway_name }}"
-enable=true
-
-[[gateway.inout]]
-account="irc.freenode"
-channel="{{ matterbridge_freenode_channel }}"
-
-[[gateway.inout]]
-account="irc.ircnet"
-channel="{{ matterbridge_ircnet_channel }}"
-
-{{ matterbridge_toml_more }}
+{{ matterbridge_toml }}
