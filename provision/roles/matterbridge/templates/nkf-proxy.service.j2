@@ -1,0 +1,15 @@
+[Unit]
+Description=nkf proxy
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ruby -vd /usr/local/bin/nkf-proxy {{ nkf_proxy_port }} {{ irc_server_host }} {{ irc_server_port }}
+Restart=always
+PrivateTmp=yes
+PermissionsStartOnly=true
+User=nobody
+Group=nogroup
+OOMScoreAdjust=1000
+
+[Install]
+WantedBy=multi-user.target

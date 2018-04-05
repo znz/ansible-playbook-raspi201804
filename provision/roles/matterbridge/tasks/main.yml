@@ -1,0 +1,23 @@
+---
+- name: "nkf-proxy.rb"
+  copy:
+    src: "nkf-proxy.rb"
+    dest: "/usr/local/bin/nkf-proxy"
+    owner: "root"
+    group: "root"
+    mode: 0755
+    validate: 'ruby -c %s'
+  notify: "Restart nkf-proxy service"
+
+- name: "nkf-proxy service file for systemd"
+  template:
+    src: "nkf-proxy.service.j2"
+    dest: "/etc/systemd/system/nkf-proxy.service"
+    owner: "root"
+    group: "root"
+    mode: 0644
+  notify: "Restart nkf-proxy service"
+
+# ufw out port
+- name: "Allow out to IRC server"
+  ufw: rule=allow direction=out to_port={{ irc_server_port }} proto=tcp

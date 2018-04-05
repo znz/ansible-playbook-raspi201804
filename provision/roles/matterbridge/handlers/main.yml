@@ -1,0 +1,7 @@
+---
+- name: "Restart nkf-proxy service"
+  systemd:
+    name: "nkf-proxy.service"
+    state: restarted
+    daemon_reload: yes
+    enabled: yes
