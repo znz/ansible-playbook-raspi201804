@@ -15,11 +15,19 @@ matterbridge_toml: |
   [[gateway]]
   name="nadoka-gateway"
   enable=true
-
   [[gateway.inout]]
   account="irc.freenode"
   channel="#nadoka_jp"
-
   [[gateway.inout]]
   account="irc.ircnet"
   channel="#nadoka:*.jp"
+
+  [[gateway]]
+  name="ruby-ja-gateway"
+  enable=true
+  [[gateway.inout]]
+  account="irc.freenode"
+  channel="#ruby-ja"
+  [[gateway.inout]]
+  account="irc.ircnet"
+  channel="#ruby-ja"
