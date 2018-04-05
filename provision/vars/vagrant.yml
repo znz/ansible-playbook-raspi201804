@@ -1,0 +1,22 @@
+---
+journald_users:
+- 'vagrant'
+
+sshd_allow_users:
+- 'root'
+- 'vagrant'
+
+sshd_allow_tcp_wrappers:
+- '10.'
+- '192.168.0.0/16'
+- '[fe80::%eth0]/10'
+- '[fe80::%wlan0]/10'
+- '.jp'
+
+nadoka:
+- service_name: 'fprog'
+  irc_host: ''
+  irc_port: 6697
+  irc_pass: "nil"
+  irc_ssl_params: '{}'
+  channel_info: "'#private' => { key: 'channelkey' }"
