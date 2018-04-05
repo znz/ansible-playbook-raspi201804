@@ -3,10 +3,10 @@ Description=nkf proxy
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/ruby -vd /usr/local/bin/nkf-proxy {{ nkf_proxy_port }} {{ irc_server_host }} {{ irc_server_port }}
+ExecStart=/usr/local/bin/matterbridge -conf /etc/matterbridge.toml
 Restart=always
 User=nobody
-Group=nogroup
+Group=irc
 OOMScoreAdjust=1000
 
 [Install]

@@ -21,3 +21,30 @@
 # ufw out port
 - name: "Allow out to IRC server"
   ufw: rule=allow direction=out to_port={{ irc_server_port }} proto=tcp
+
+- name: "Download matterbridge"
+  get_url:
+    url: "https://github.com/42wim/matterbridge/releases/download/{{ matterbridge_version }}/{{ matterbridge_filename }}"
+    dest: "/usr/local/bin/matterbridge"
+    checksum: "sha256:{{ matterbridge_sha256 }}"
+    owner: "root"
+    group: "root"
+    mode: 0755
+
+- name: "Create matterbridge.toml"
+  template:
+    src: "matterbridge.toml.j2"
+    dest: "/etc/matterbridge.toml"
+    owner: "root"
+    group: "irc"
+    mode: 0640
+  notify: "Restart matterbridge service"
+
+- name: "matterbridge service file for systemd"
+  template:
+    src: "matterbridge.service.j2"
+    dest: "/etc/systemd/system/matterbridge.service"
+    owner: "root"
+    group: "root"
+    mode: 0644
+  notify: "Restart matterbridge service"

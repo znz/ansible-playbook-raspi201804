@@ -5,3 +5,10 @@
     state: restarted
     daemon_reload: yes
     enabled: yes
+
+- name: "Restart matterbridge service"
+  systemd:
+    name: "matterbridge.service"
+    state: restarted
+    daemon_reload: yes
+    enabled: yes
