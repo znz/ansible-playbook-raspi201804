@@ -3,9 +3,9 @@ nkf_proxy_port: 6668
 irc_server_host: "irc.ircnet.ne.jp"
 irc_server_port: 6667
 
-matterbridge_version: "v1.11.1"
+matterbridge_version: "v1.11.2"
 matterbridge_filename: "matterbridge-linux-arm"
-matterbridge_sha256: "32d6a2f518fcd5d33c6a67e2acbf1dd7bfa5161165fc0233c868bd72be52476c"
+matterbridge_sha256: "5ffb67ff07cb2a2ce2cbb7a12fb06bec202e42f36834ccd1662969725d63a425"
 
 matterbridge_nick: "matterbridge"
 matterbridge_toml: |
