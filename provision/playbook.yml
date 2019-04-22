@@ -28,3 +28,4 @@
   - role: znz.unattended-upgrades
   - role: znz.nadoka
   - role: matterbridge
+  - role: znz.timesyncd
