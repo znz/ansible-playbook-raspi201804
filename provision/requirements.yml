@@ -8,3 +8,6 @@
   version: master
   name: znz.nadoka
 - src: znz.timesyncd
+- src: https://github.com/znz/ansible-role-openvpn-client
+  version: master
+  name: znz.openvpn-client
