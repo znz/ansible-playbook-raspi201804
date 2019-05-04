@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  vars_files:
+  - vars/{{ stage }}.yml
+  roles:
+  - role: znz.openvpn-client
+  tasks:
+  - sysctl:
+      name: net.ipv4.ip_forward
+      value: 1
+      sysctl_file: "/etc/sysctl.d/50-local.conf"
+      sysctl_set: yes
